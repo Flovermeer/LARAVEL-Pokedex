@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::prefix('api')->group(function () {
+    //trainer
+    Route::get('/trainers', [TrainerController::class, 'index']);
+    Route::get('/trainers/{id}', [TrainerController::class, 'show']);
+    Route::get('/trainers/{id}/pokemon', [TrainerController::class, 'indexPokemon']);
+    Route::get('/trainers/{id}/pokemon/{pokemonId}', [TrainerController::class, 'showPokemon']);
+    Route::patch('/trainers/{id}', [TrainerController::class, 'update']);
+    Route::post('/trainers', [TrainerController::class, 'store']);
+    Route::delete('/trainers/{id}', [TrainerController::class, 'destroy']);
 });
