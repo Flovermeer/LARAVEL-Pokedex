@@ -25,7 +25,7 @@ class Pokemon extends Model
 
     public function types()
     {
-        return $this->belongsToMany(Type::class)->withPivot('created_at');
+        return $this->belongsToMany(Type::class);
     }
 
     public function trainers()

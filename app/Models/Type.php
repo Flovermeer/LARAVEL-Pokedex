@@ -20,6 +20,11 @@ class Type extends Model
         'color'
     ];
 
+
+    protected $hidden = [
+        'pivot'
+    ];
+
     public function pokemon()
     {
         return $this->belongsToMany(Pokemon::class);

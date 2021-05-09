@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Carbon;
 use App\Models\Trainer;
-use App\Models\Pokemon;
 
 class TrainerController extends Controller
 {

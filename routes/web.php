@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PokemonController;
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,9 @@ Route::prefix('api')->group(function () {
     Route::patch('/trainers/{id}', [TrainerController::class, 'update']);
     Route::post('/trainers', [TrainerController::class, 'store']);
     Route::delete('/trainers/{id}', [TrainerController::class, 'destroy']);
+
+    //pokemon
+    Route::get('/pokemon', [PokemonController::class, 'index']);
+    Route::get('/pokemon/{id}', [PokemonController::class, 'show']);
+    Route::post('/pokemon', [PokemonController::class, 'store']);
 });

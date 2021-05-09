@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pokemon;
 
 class PokemonTypeController extends Controller
 {
@@ -13,7 +14,6 @@ class PokemonTypeController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
